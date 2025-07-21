@@ -39,15 +39,15 @@ aliyun:
     endpoint: https://oss-cn-beijing.aliyuncs.com
     bucketName: java-dc
     region: cn-beijing
-#    access-key-id: LTAI5t8mmH26jhZatd2hfHcU
-#    access-key-secret: 9no98NiKti7MzCvSgsbHPTisXVZDaG
+    access-key-id: LTAI5t8mmH26jhZatd2hfHcU
+    access-key-secret: 9no98NiKti7MzCvSgsbHPTisXVZDaG
 
 # OpenAI 配置
 ai:
   service:
-    qwen:
-      url: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
-      key: sk-35bcb0f8628c4cf38667daf238694e8e
+#    qwen:
+#      url: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
+#      key: sk-35bcb0f8628c4cf38667daf238694e8e
     deepseek:
       url: http://localhost:11434/api/generate  # Ollama默认API地址
       model: deepseek-r1:7b

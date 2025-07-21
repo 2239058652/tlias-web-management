@@ -1,6 +1,6 @@
 package com.itheima.ws;
 
-import com.itheima.service.impl.AIService;
+import com.itheima.service.impl.AIDeepseekService;
 import jakarta.websocket.OnClose;
 import jakarta.websocket.OnMessage;
 import jakarta.websocket.OnOpen;
@@ -20,18 +20,20 @@ import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 @Component
-@ServerEndpoint("/chat")
-public class ChatEndpoint {
+@ServerEndpoint("/deepseek-chat")
+public class ChatEndPointByDeepseek {
 
-    private static AIService aiService;
 
-    private static final Logger logger = LoggerFactory.getLogger(ChatEndpoint.class);
+
+    private static AIDeepseekService aiService;
+
+    private static final Logger logger = LoggerFactory.getLogger(ChatEndPointByDeepseek.class);
     private static final Set<Session> sessions = Collections.synchronizedSet(new HashSet<>());
 
     // 注入 Spring Bean
     @Autowired
-    public void setAIService(AIService aiService) {
-        ChatEndpoint.aiService = aiService;
+    public void setAIService(AIDeepseekService aiService) {
+        ChatEndPointByDeepseek.aiService = aiService;
     }
 
 

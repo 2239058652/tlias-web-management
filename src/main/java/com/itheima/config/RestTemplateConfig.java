@@ -18,7 +18,7 @@ public class RestTemplateConfig {
 
         // 设置超时时间（单位：毫秒）
         factory.setConnectTimeout(10000); // 连接超时：10秒
-        factory.setReadTimeout(10000);    // 读取超时：10秒
+        factory.setReadTimeout(60000);    // 读取超时：60秒
 
         // 如果你使用 HTTP 代理（例如 Clash、V2Ray、Surge、Shadowrocket）
         // 修改成你本地代理监听的地址和端口（如127.0.0.1:7890）
