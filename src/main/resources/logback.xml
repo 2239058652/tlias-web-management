@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <!-- 控制台输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 文件输出（使用推荐的 SizeAndTimeBasedRollingPolicy） -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/logback.log</file>
+
+        <!-- 使用 SizeAndTimeBasedRollingPolicy 同时处理时间和大小滚动 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- 日志文件名格式：每天一个文件夹，文件名包含序号 -->
+            <fileNamePattern>logs/logback.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>  <!-- 单个文件最大10MB -->
+            <maxHistory>30</maxHistory>    <!-- 保留30天日志 -->
+            <totalSizeCap>1GB</totalSizeCap>  <!-- 日志总大小上限 -->
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 日志输出级别 -->
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

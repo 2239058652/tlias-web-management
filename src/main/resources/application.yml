@@ -1,0 +1,54 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: springboot-mybatis-quickstart
+  #数据库的连接信息
+  datasource:
+    url: jdbc:mysql://localhost:3306/tlias
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Dingtong1998
+  servlet:
+    multipart:
+      #最大单个文件上传大小
+      max-file-size: 10MB
+      #最大请求大小
+      max-request-size: 100MB
+
+#时间格式化,但是好像需要额外配置才能转化LocalDateTime格式
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+
+#配置mybatis
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true  #开启驼峰命名映射开关,自动映射表字段
+
+
+#配置事务管理日志级别
+logging:
+  level:
+    org.springframework.transaction.annotation.Transactional: debug
+
+#配置阿里云OSS
+aliyun:
+  oss:
+    endpoint: https://oss-cn-beijing.aliyuncs.com
+    bucketName: java-dc
+    region: cn-beijing
+    access-key-id: LTAI5t8mmH26jhZatd2hfHcU
+    access-key-secret: 9no98NiKti7MzCvSgsbHPTisXVZDaG
+
+# OpenAI 配置
+ai:
+  service:
+    qwen:
+      url: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
+      key: sk-35bcb0f8628c4cf38667daf238694e8e
+
+  model:
+    deepseek:
+      url=http://localhost:8080/api/chat:
