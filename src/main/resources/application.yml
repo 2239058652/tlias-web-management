@@ -39,8 +39,8 @@ aliyun:
     endpoint: https://oss-cn-beijing.aliyuncs.com
     bucketName: java-dc
     region: cn-beijing
-    access-key-id: LTAI5t8mmH26jhZatd2hfHcU
-    access-key-secret: 9no98NiKti7MzCvSgsbHPTisXVZDaG
+#    access-key-id: LTAI5t8mmH26jhZatd2hfHcU
+#    access-key-secret: 9no98NiKti7MzCvSgsbHPTisXVZDaG
 
 # OpenAI 配置
 ai:
