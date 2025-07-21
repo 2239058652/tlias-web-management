@@ -48,7 +48,6 @@ ai:
     qwen:
       url: https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation
       key: sk-35bcb0f8628c4cf38667daf238694e8e
-
-  model:
     deepseek:
-      url=http://localhost:8080/api/chat:
+      url: http://localhost:11434/api/generate  # Ollama默认API地址
+      model: deepseek-r1:7b
