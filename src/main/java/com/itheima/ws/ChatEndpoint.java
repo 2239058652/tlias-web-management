@@ -1,6 +1,6 @@
 package com.itheima.ws;
 
-import com.itheima.service.AIService;
+import com.itheima.service.impl.AIService;
 import jakarta.websocket.OnClose;
 import jakarta.websocket.OnMessage;
 import jakarta.websocket.OnOpen;
